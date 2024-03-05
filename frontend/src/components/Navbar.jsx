@@ -9,7 +9,7 @@ import logo from "../assets/logo.png";
 const Navbar = () => {
   const onSearch = (value) => console.log(value);
   return (
-    <nav className=' flex p-2 justify-between items-center gap-3'>
+    <nav className=' flex p-2 justify-between items-center gap-3 w-full'>
       <div>
         <Image src={logo} alt='logo' preview={false} />
       </div>
