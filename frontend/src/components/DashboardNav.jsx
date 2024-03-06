@@ -6,9 +6,10 @@ import { Image, Dropdown, Avatar } from "antd";
 import { useDispatch } from "react-redux";
 import { logOut } from "../features/authSlice";
 import { FaRegUserCircle } from "react-icons/fa";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 
 const DashboardNav = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const items = [
     {
@@ -23,8 +24,8 @@ const DashboardNav = () => {
     {
       label: "Profile",
       key: "",
-      onclick: () => {
-        console.log("Profile");
+      onClick: () => {
+        navigate("/profile");
       },
     },
   ];
@@ -70,6 +71,17 @@ const DashboardNav = () => {
                 : "text-white no-underline"
             }>
             Request Blood
+          </NavLink>
+          <NavLink
+            to='/profile'
+            className={({ isActive, isPending }) =>
+              isPending
+                ? "pending"
+                : isActive
+                ? "underline text-white font-semibold"
+                : "text-white no-underline"
+            }>
+            Profile
           </NavLink>
         </li>
 

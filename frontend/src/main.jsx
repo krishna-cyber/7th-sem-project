@@ -16,6 +16,8 @@ import Login from "./pages/Login.jsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import BloodRequestForm from "./components/BloodRequestForm.jsx";
 import DonorList from "./components/DonorList.jsx";
+import Profile from "./components/Profile.jsx";
+import DonorDetails from "./components/DonorDetails.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,6 +35,14 @@ const router = createBrowserRouter([
       {
         path: "/donor-list",
         element: <DonorList />,
+      },
+      {
+        path: "/profile",
+        element: <Profile />,
+      },
+      {
+        path: "/donor/:id",
+        element: <DonorDetails />,
       },
     ],
   },
