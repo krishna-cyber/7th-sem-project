@@ -10,6 +10,7 @@ const initialState = {
   loading: false,
   users: null,
   error: null,
+  userDetail: null,
 };
 
 const searchSlice = createSlice({
@@ -27,8 +28,12 @@ const searchSlice = createSlice({
     setError: (state, action) => {
       state.error = action.payload;
     },
+    setUserDetail: (state, action) => {
+      state.userDetail = action.payload;
+    },
   },
 });
 
 export default searchSlice.reducer;
-export const { setUsers, setLoading, setError } = searchSlice.actions;
+export const { setUsers, setLoading, setError, setUserDetail } =
+  searchSlice.actions;

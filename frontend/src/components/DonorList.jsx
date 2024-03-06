@@ -8,9 +8,11 @@ import { CiLocationOn } from "react-icons/ci";
 import { BiDonateBlood } from "react-icons/bi";
 import { BsGenderAmbiguous } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
+import { setUserDetail } from "../features/searchSlice";
 import axios from "axios";
 
 const DonorList = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const token = useSelector((state) => state.auth.token);
   const user = useSelector((state) => state.auth.user);
@@ -76,6 +78,7 @@ const DonorList = () => {
                       <Button
                         type='link'
                         onClick={() => {
+                          dispatch(setUserDetail(user));
                           navigate(`/donor/${user._id}`);
                         }}>
                         View Details
