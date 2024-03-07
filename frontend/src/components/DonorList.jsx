@@ -97,7 +97,7 @@ const DonorList = () => {
                   </span>
                   <span className=' flex items-center'>
                     <BsGenderAmbiguous />
-                    Male
+                    {user.gender}
                   </span>
                 </span>
               </span>
